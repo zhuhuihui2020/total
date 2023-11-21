@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
+<mapper namespace="com.test.model">
+<!--本地读取数据库里的case表-->
+    <!--获取用户信息case-->
+    <select id="getUserInfoCase" parameterType="Integer" resultType="com.test.model.GetUserInfoCaseZT">
+        <!-- SQL语句 -->
+        select * from getUserInfoCase where id=#{id};
+    </select>
+
+    <select id="addUserCase" parameterType="Integer" resultType="com.test.model.AddUserCaseZT">
+        <!-- SQL语句 -->
+        select * from addUserCase where id=#{id};
+    </select>
+
+    <select id="deleteUserCase" parameterType="Integer" resultType="com.test.model.DeleteUserCaseZT">
+        <!-- SQL语句 -->
+        select * from deleteUserCase where id=#{id};
+    </select>
+
+    <select id="updateUserCase" parameterType="Integer" resultType="com.test.model.UpdateUserCaseZT">
+        <!-- SQL语句 -->
+        select * from updateUserCase where id=#{id};
+    </select>
+
+<!--    这个是批量查询，参数还写integer，但是写代码的时候，可以写个循环-->
+    <select id="getNameById" parameterType="Integer" resultType="com.test.model.GetNameByIdCaseZT">
+        <!-- SQL语句 -->
+        select * from getNameByIdCase where id=#{id};
+    </select>
+
+    <!--    查询一下批量通过id查询name的总条数-->
+    <select id="getNameByIdNum" parameterType="Integer" resultType="Integer">
+        <!-- SQL语句 -->
+        select count(*) from getNameByIdCase;
+    </select>
+</mapper>

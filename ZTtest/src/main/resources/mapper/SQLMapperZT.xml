@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper,如果有多个mapper文件，这个必须唯一 -->
+<mapper namespace="com.course.model">
+<!--读取中台数据库的信息-->
+
+<!--    &lt;!&ndash;获取token信息&ndash;&gt;-->
+<!--    <select id="getToken" parameterType="com.course.model.GetUserInfoCase" resultType="com.course.model.UserZT">-->
+<!--        &lt;!&ndash; SQL语句 &ndash;&gt;-->
+<!--        select * from user where-->
+<!--        id=#{userId};-->
+<!--    </select>-->
+
+    <!--获取用户信息-->
+    <select id="getUserInfo" parameterType="com.test.model.GetUserInfoCaseZT" resultType="com.test.model.UserZT">
+        <!-- SQL语句 -->
+        select * from user where
+        phone=#{account};
+    </select>
+
+
+</mapper>
